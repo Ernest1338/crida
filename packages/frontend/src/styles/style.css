@@ -1,0 +1,669 @@
+/* ============================================================================
+   Crida - Caido Frida Integration Plugin Styles
+   ============================================================================ */
+
+.crida {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--c-fg-default, #e1e4e8);
+  background: var(--c-bg-default, #0d1117);
+}
+
+/* -- Tab Navigation -- */
+
+.crida__tabs {
+  display: flex;
+  border-bottom: 1px solid var(--c-bg-subtle, #21262d);
+  background: var(--c-bg-subtle, #161b22);
+  padding: 0 8px;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.crida__tab {
+  padding: 10px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  color: var(--c-fg-subtle, #8b949e);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  white-space: nowrap;
+}
+
+.crida__tab:hover {
+  color: var(--c-fg-default, #e1e4e8);
+  background: var(--c-bg-default, #0d1117);
+}
+
+.crida__tab--active {
+  color: var(--c-fg-accent, #58a6ff);
+  border-bottom-color: var(--c-fg-accent, #58a6ff);
+}
+
+.crida__tab i {
+  margin-right: 6px;
+}
+
+/* -- Content Area -- */
+
+.crida__content {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+}
+
+.crida__panel {
+  display: none;
+}
+
+.crida__panel--active {
+  display: block;
+}
+
+/* -- Status Bar -- */
+
+.crida__status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px;
+  background: var(--c-bg-subtle, #161b22);
+  border-top: 1px solid var(--c-bg-subtle, #21262d);
+  font-size: 12px;
+  color: var(--c-fg-subtle, #8b949e);
+  flex-shrink: 0;
+}
+
+.crida__status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.crida__status-indicator--connected {
+  background: #3fb950;
+  box-shadow: 0 0 4px #3fb950;
+}
+
+.crida__status-indicator--disconnected {
+  background: #f85149;
+}
+
+.crida__status-indicator--partial {
+  background: #d29922;
+  box-shadow: 0 0 4px #d29922;
+}
+
+/* -- Dashboard -- */
+
+.crida__dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.crida__card {
+  background: var(--c-bg-subtle, #161b22);
+  border: 1px solid var(--c-border-default, #30363d);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.crida__card--full {
+  grid-column: 1 / -1;
+}
+
+.crida__card h3 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--c-fg-default, #e1e4e8);
+}
+
+.crida__card h3 i {
+  margin-right: 8px;
+  color: var(--c-fg-accent, #58a6ff);
+}
+
+/* -- Form Elements -- */
+
+.crida__form-group {
+  margin-bottom: 12px;
+}
+
+.crida__form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--c-fg-subtle, #8b949e);
+  margin-bottom: 4px;
+}
+
+.crida__input {
+  width: 100%;
+  padding: 6px 10px;
+  background: var(--c-bg-default, #0d1117);
+  border: 1px solid var(--c-border-default, #30363d);
+  border-radius: 4px;
+  color: var(--c-fg-default, #e1e4e8);
+  font-size: 13px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.crida__input:focus {
+  outline: none;
+  border-color: var(--c-fg-accent, #58a6ff);
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+}
+
+.crida__select {
+  width: 100%;
+  padding: 6px 10px;
+  background: var(--c-bg-default, #0d1117);
+  border: 1px solid var(--c-border-default, #30363d);
+  border-radius: 4px;
+  color: var(--c-fg-default, #e1e4e8);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* -- Buttons -- */
+
+.crida__btn {
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.crida__btn--primary {
+  background: var(--c-fg-accent, #238636);
+  color: #fff;
+  border-color: rgba(240, 246, 252, 0.1);
+}
+
+.crida__btn--primary:hover {
+  background: #2ea043;
+}
+
+.crida__btn--danger {
+  background: #da3633;
+  color: #fff;
+}
+
+.crida__btn--danger:hover {
+  background: #f85149;
+}
+
+.crida__btn--secondary {
+  background: var(--c-bg-subtle, #21262d);
+  color: var(--c-fg-default, #e1e4e8);
+  border-color: var(--c-border-default, #30363d);
+}
+
+.crida__btn--secondary:hover {
+  background: var(--c-border-default, #30363d);
+}
+
+.crida__btn--small {
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.crida__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.crida__btn-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* -- Tables -- */
+
+.crida__table-wrapper {
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.crida__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.crida__table th {
+  text-align: left;
+  padding: 8px 12px;
+  background: var(--c-bg-default, #0d1117);
+  color: var(--c-fg-subtle, #8b949e);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--c-border-default, #30363d);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.crida__table td {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--c-border-default, #21262d);
+  color: var(--c-fg-default, #e1e4e8);
+  word-break: break-all;
+}
+
+.crida__table tr:hover td {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+/* -- Script Editor -- */
+
+.crida__editor-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 200px);
+  min-height: 400px;
+}
+
+.crida__editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: var(--c-bg-subtle, #161b22);
+  border: 1px solid var(--c-border-default, #30363d);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+}
+
+.crida__editor {
+  flex: 1;
+  border: 1px solid var(--c-border-default, #30363d);
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+}
+
+.crida__editor textarea {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  background: var(--c-bg-default, #0d1117);
+  color: #79c0ff;
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  border: none;
+  resize: none;
+  tab-size: 2;
+  box-sizing: border-box;
+}
+
+.crida__editor textarea:focus {
+  outline: none;
+}
+
+/* -- Console -- */
+
+.crida__console {
+  background: var(--c-bg-default, #0d1117);
+  border: 1px solid var(--c-border-default, #30363d);
+  border-radius: 6px;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  max-height: calc(100vh - 200px);
+  min-height: 300px;
+  overflow-y: auto;
+}
+
+.crida__console-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--c-bg-subtle, #161b22);
+  border-bottom: 1px solid var(--c-border-default, #30363d);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.crida__console-messages {
+  padding: 8px 12px;
+}
+
+.crida__console-msg {
+  padding: 3px 0;
+  border-bottom: 1px solid rgba(48, 54, 61, 0.3);
+}
+
+.crida__console-msg--info {
+  color: #8b949e;
+}
+
+.crida__console-msg--success {
+  color: #3fb950;
+}
+
+.crida__console-msg--warning {
+  color: #d29922;
+}
+
+.crida__console-msg--error {
+  color: #f85149;
+}
+
+.crida__console-msg--debug {
+  color: #bc8cff;
+}
+
+.crida__console-msg .timestamp {
+  color: #484f58;
+  margin-right: 8px;
+}
+
+.crida__console-msg .source {
+  color: var(--c-fg-accent, #58a6ff);
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+/* -- Hooks Library -- */
+
+.crida__hooks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+}
+
+.crida__hook-card {
+  background: var(--c-bg-default, #0d1117);
+  border: 1px solid var(--c-border-default, #30363d);
+  border-radius: 6px;
+  padding: 12px;
+  transition: border-color 0.15s ease;
+}
+
+.crida__hook-card:hover {
+  border-color: var(--c-fg-accent, #58a6ff);
+}
+
+.crida__hook-card h4 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  color: var(--c-fg-default, #e1e4e8);
+}
+
+.crida__hook-card p {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  color: var(--c-fg-subtle, #8b949e);
+  line-height: 1.4;
+}
+
+.crida__hook-card .crida__badge-group {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+/* -- Badges -- */
+
+.crida__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.crida__badge--android {
+  background: rgba(61, 220, 132, 0.15);
+  color: #3fb950;
+}
+
+.crida__badge--ios {
+  background: rgba(88, 166, 255, 0.15);
+  color: #58a6ff;
+}
+
+.crida__badge--any {
+  background: rgba(139, 148, 158, 0.15);
+  color: #8b949e;
+}
+
+.crida__badge--category {
+  background: rgba(188, 140, 255, 0.15);
+  color: #bc8cff;
+}
+
+/* -- Analysis Tree -- */
+
+.crida__tree {
+  font-size: 13px;
+}
+
+.crida__tree-node {
+  padding: 4px 0;
+}
+
+.crida__tree-toggle {
+  cursor: pointer;
+  user-select: none;
+  color: var(--c-fg-accent, #58a6ff);
+}
+
+.crida__tree-toggle:hover {
+  text-decoration: underline;
+}
+
+.crida__tree-children {
+  padding-left: 20px;
+  border-left: 1px solid var(--c-border-default, #30363d);
+  margin-left: 8px;
+}
+
+.crida__tree-leaf {
+  padding: 2px 0;
+  color: var(--c-fg-subtle, #8b949e);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+}
+
+.crida__tree-actions {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+.crida__tree-actions button {
+  padding: 1px 6px;
+  font-size: 11px;
+  border-radius: 3px;
+  cursor: pointer;
+  background: var(--c-bg-subtle, #21262d);
+  color: var(--c-fg-subtle, #8b949e);
+  border: 1px solid var(--c-border-default, #30363d);
+}
+
+.crida__tree-actions button:hover {
+  color: var(--c-fg-default, #e1e4e8);
+  background: var(--c-border-default, #30363d);
+}
+
+/* -- Custom Plugin Builder -- */
+
+.crida__plugin-builder {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 16px;
+  height: calc(100vh - 200px);
+}
+
+.crida__plugin-list {
+  background: var(--c-bg-subtle, #161b22);
+  border: 1px solid var(--c-border-default, #30363d);
+  border-radius: 6px;
+  overflow-y: auto;
+}
+
+.crida__plugin-list-item {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--c-border-default, #21262d);
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.crida__plugin-list-item:hover {
+  background: rgba(88, 166, 255, 0.05);
+}
+
+.crida__plugin-list-item--active {
+  background: rgba(88, 166, 255, 0.1);
+  border-left: 3px solid var(--c-fg-accent, #58a6ff);
+}
+
+.crida__plugin-list-item h4 {
+  margin: 0 0 4px 0;
+  font-size: 13px;
+}
+
+.crida__plugin-list-item p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--c-fg-subtle, #8b949e);
+}
+
+.crida__plugin-config {
+  background: var(--c-bg-subtle, #161b22);
+  border: 1px solid var(--c-border-default, #30363d);
+  border-radius: 6px;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* -- RPC Tester -- */
+
+.crida__rpc-tester {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.crida__rpc-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  background: var(--c-bg-default, #0d1117);
+  border: 1px solid var(--c-border-default, #30363d);
+  border-radius: 4px;
+  color: var(--c-fg-default, #e1e4e8);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  resize: vertical;
+}
+
+.crida__rpc-output {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  background: var(--c-bg-default, #0d1117);
+  border: 1px solid var(--c-border-default, #30363d);
+  border-radius: 4px;
+  color: #3fb950;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+/* -- Filter Input -- */
+
+.crida__filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.crida__filter .crida__input {
+  flex: 1;
+}
+
+/* -- Empty State -- */
+
+.crida__empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--c-fg-subtle, #8b949e);
+}
+
+.crida__empty i {
+  font-size: 32px;
+  margin-bottom: 12px;
+  display: block;
+  color: var(--c-border-default, #30363d);
+}
+
+.crida__empty p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* -- Loading Spinner -- */
+
+.crida__spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--c-border-default, #30363d);
+  border-top-color: var(--c-fg-accent, #58a6ff);
+  border-radius: 50%;
+  animation: crida-spin 0.6s linear infinite;
+}
+
+@keyframes crida-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* -- Scrollbar Styling -- */
+
+.crida ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.crida ::-webkit-scrollbar-track {
+  background: var(--c-bg-default, #0d1117);
+}
+
+.crida ::-webkit-scrollbar-thumb {
+  background: var(--c-border-default, #30363d);
+  border-radius: 4px;
+}
+
+.crida ::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}

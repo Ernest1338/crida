@@ -1,0 +1,30 @@
+{
+  "id": "crida",
+  "name": "Crida - Frida Integration for Caido",
+  "version": "0.1.0",
+  "description": "Bridge between Caido and Frida for mobile application security testing. Inspect, hook, and manipulate mobile app functions directly from Caido.",
+  "author": {
+    "name": "Ernest1338",
+    "email": "",
+    "url": "https://github.com/Ernest1338/crida"
+  },
+  "plugins": [
+    {
+      "kind": "frontend",
+      "id": "crida-frontend",
+      "name": "Crida Frontend",
+      "entrypoint": "frontend/script.js",
+      "style": "frontend/style.css",
+      "backend": {
+        "id": "crida-backend"
+      }
+    },
+    {
+      "kind": "backend",
+      "id": "crida-backend",
+      "name": "Crida Backend",
+      "runtime": "javascript",
+      "entrypoint": "backend/script.js"
+    }
+  ]
+}
