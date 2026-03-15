@@ -1,0 +1,9 @@
+{
+  "name": "crida-shared",
+  "version": "0.1.0",
+  "description": "Shared types for Crida plugin",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts"
+}

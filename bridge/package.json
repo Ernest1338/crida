@@ -1,0 +1,19 @@
+{
+  "name": "crida-bridge",
+  "version": "0.1.0",
+  "description": "Standalone Frida bridge server for Crida - connects Caido with Frida",
+  "author": "Ernest1338",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun --watch run src/index.ts"
+  },
+  "dependencies": {
+    "frida": "16.5.9"
+  },
+  "devDependencies": {
+    "@types/bun": "1.2.0"
+  }
+}
